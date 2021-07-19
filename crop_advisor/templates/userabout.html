@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item ">
+			<a class="nav-link text-white" href="{{ url_for('userhome') }}">Home</a>
+			
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('weatherinformation') }}">Weather information</a>
+		</li>
+		<li class="nav-item active">
+			<a class="btn btn-outline-dark text-white" href="{{ url_for('userabout') }}">About</a>
+			<span class="sr-only">(current)</span>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('contactus') }}">Contact us</a>
+		</li>
+		<li class="dropdown nav-item ">
+			<a class="dropdown-toggle nav-link text-white" data-toggle="dropdown" href="#">Account</a>
+                            <ul class="dropdown-menu" style="background-color: #C0C0C0;">
+                                <li><a class=" nav-link text-white" href="{{url_for('userprofile')}}">profile</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userchangepassword')}}">Change password</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userlogout')}}">Log Out</a></li>
+							</ul>
+		</li>
+		</ul>
+</div>
+{% endblock nav%}
+
+{% block body %}
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+				<div class="banner-top">
+					<div class="overlay">
+						<div class="container">
+							<div class="w3layouts-banner-info text-center">
+								<h3 class="text-wh"><u>Crop Advisor</u></h3>
+								<h4 class="text-wh mx-auto my-4"><b>Get informed decisions about your farming strategy.</b></h4>
+								<br>
+								<h4 class="text-wh mx-auto my-4"><strong><u> Our Services</u></strong></h4>
+								<p class="text-li mx-auto mt-2">
+									Recommendation about the type of crops to be cultivated which is best suited
+							for the respective conditions.<br>
+									Recommendation about the type of fertilizer best suited for the particular soil
+							and the recommended crop.<br>
+									Predicting the name and causes of crop disease and suggestions to cure it<br>
+									4. How to cure the disease?</p>
+									<br>
+								<h4 class="text-wh mx-auto my-4"><strong><u>Here are some questions we'll answer</u></strong></h4>
+								<p class="text-li mx-auto mt-2">
+									1. What crop to plant here? <br>
+									2. What fertilizer to use? <br>
+									3. Which disease do your crop have?<br>
+									4. How to cure the disease?</p>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+	</div>
+</section>
+
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('userhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+<!-- move top icon -->
+	<a href="userabout" class="move-top text-center"></a>
+	<!-- //move top icon -->
+
+{%endblock footer%}

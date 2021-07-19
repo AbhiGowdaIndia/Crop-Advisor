@@ -1,0 +1,70 @@
+<!-- base file to extend-->
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('adminhome') }}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('adminabout') }}">About</a>
+		</li>
+		<li class="nav-item">
+			<a class=" nav-link text-white" href="{{ url_for('adminlogout') }}">Log Out</a>
+		</li>
+	</ul>
+</div>
+
+{% endblock nav%}
+
+{% block body %}
+</br>
+</br>
+{% if result %} 
+</br>     
+<div class="row h-100 justify-content-center">
+</br></br>
+<h3 class="text-shadow">Crop Price Details...</h3>
+</div>
+</br>
+<div class="row h-100 justify-content-center">
+</br>
+<table class="table-striped" cellspacing=10 cellpadding=4  align="center" style="float:center;">
+<tr><th><b>Crop name</b></th><th><b>Price</b></th><th></th></tr>
+{% for query in result %}
+    <tr>
+    <td>{{query.crop}}</td>
+    <td>{{ query.price }}</td>
+    <td><a class="nav-link text-primary" href="/deletecropprice/{{query.id}}"><b>Delete</b></a></td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+</br></br></br></br></br></br></br></br>
+{% else %}
+</br>
+</br>
+<div class="row h-100 justify-content-center">
+<h3 class="text-shadow">There are no crops added yet...!</h3>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+{% endif %}
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('adminhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+<!-- move top icon -->
+	<a href="admincropview" class="move-top text-center"></a>
+
+{%endblock footer%}

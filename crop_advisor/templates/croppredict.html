@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('userhome') }}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('weatherinformation') }}">Weather information</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('userabout') }}">About</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('contactus') }}">Contact us</a>
+		</li>
+		<li class="dropdown nav-item ">
+			<a class="dropdown-toggle nav-link text-white" data-toggle="dropdown" href="#">Account</a>
+                            <ul class="dropdown-menu" style="background-color: #C0C0C0;">
+                                <li><a class=" nav-link text-white" href="{{url_for('userprofile')}}">profile</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userchangepassword')}}">Change password</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userlogout')}}">Log Out</a></li>
+							</ul>
+		</li>
+		</ul>
+</div>
+{% endblock nav%}
+
+{% block body %}
+		  
+	<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+				<div class="banner-top2">
+					<div class="overlay">
+					</br>
+					</br>
+						<div class="container text-center">
+						<h4 class="h3 mb-3 text-link"><b>Get informed advice on crop</b></h4>
+						</br>
+						<div class="row h-100 justify-content-center text-center">
+			{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" style="width:50%">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          </div></br>
+<div class="row h-100 justify-content-center text-center">				
+	
+	<form class="form-signin" style="width:30%;" method="POST" action="{{ url_for('croppredict') }}">
+    <div class="form-group">
+      <label class="text-link" for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+      <input
+        type="number"
+        class="form-control form-control-lg"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label class="text-link" for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous</b></label
+      >
+      <input
+        type="number"
+        class="form-control form-control-lg"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="text-link" for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="number"
+        class="form-control form-control-lg"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label class="text-link" for="ph" style="font-size: 17px"><b>ph level</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control form-control-lg"
+        id="ph"
+        name="ph"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label  class="text-link" for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control form-control-lg"
+        id="Rainfall"
+        name="rainfall"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+	
+	<div class="form-group">
+      <label class="text-link" for="soiltype" style="font-size: 17px "><b>Soil Type</b></label>
+      <select
+        id="Soiltype"
+        name="soiltype"
+        class="form-control form-control-lg"
+        style="font-weight: bold;"
+        
+        required
+      >
+	  {% set soil_type=['clay loam soil', 'Alluvial Soil', 'clay soil', 'silty soil',
+       'loamy soil', 'black cotton soil', 'sandy soil',
+       'sandy and loam soil', 'Red sandy loam', 'Coastal sandy',
+       'Black soil'] %}
+	   {% for soil in soil_type %}
+			<option value="{{soil}}">{{soil}}</option>
+    {% endfor %}
+	  </select>
+	  </div>
+	
+    <div class="form-group">
+      <label class="text-link" for="State" style="font-size: 17px "><b>State</b></label>
+      <select
+        onchange="print_city('state', this.selectedIndex);"
+        id="sts"
+        name="stt"
+        class="form-control form-control-lg"
+        style="font-weight: bold;"
+        
+        required
+      ></select>
+	  </div>
+	  <div class="form-group">
+      <label class="text-link" for="City" style="font-size: 17px"><b>City</b></label>
+      <select
+        id="state"
+        class="form-control form-control-lg"
+        name="city"
+        style="font-weight: bold;"
+        required
+      ></select>
+      <script language="javascript">
+        print_state("sts");
+      </script>
+    </div>
+</br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg btn-primary btn-block">
+        Predict
+      </button>
+    </div>
+  </form>
+	</div>
+    </div>
+    </br></br>
+						
+	</div>
+	</div>
+	</div>
+	</div>
+</section>
+		  
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('userhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+
+{%endblock footer%}

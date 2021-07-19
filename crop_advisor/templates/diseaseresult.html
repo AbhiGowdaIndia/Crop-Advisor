@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('userhome') }}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('weatherinformation') }}">Weather information</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('userabout') }}">About</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('contactus') }}">Contact us</a>
+		</li>
+		<li class="dropdown nav-item ">
+			<a class="dropdown-toggle nav-link text-white" data-toggle="dropdown" href="#">Account</a>
+                            <ul class="dropdown-menu" style="background-color: #C0C0C0;">
+                                <li><a class=" nav-link text-white" href="{{url_for('userprofile')}}">profile</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userchangepassword')}}">Change password</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userlogout')}}">Log Out</a></li>
+							</ul>
+		</li>
+		</ul>
+</div>
+{% endblock nav%}
+
+{% block body %}
+
+	<div class="row h-100 justify-content-center banner-top4" >
+	<div>
+	</br>
+	</br>
+	</br>
+	<div  style="justify-content: center; background-color:#b8b894; margin-left:10%;margin-right:10%;">
+	</br></br>
+	<p class="text-center text-link" style=" font-size: 20px;">{{ prediction }}</p>
+	
+	</div>
+	</br>
+	</br>
+	</br>
+	</div>
+	</div>
+	
+		  
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('userhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+
+{%endblock footer%}

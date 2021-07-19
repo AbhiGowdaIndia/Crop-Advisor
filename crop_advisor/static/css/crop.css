@@ -1,0 +1,43 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 12px 18px 0 rgba(0,0,0,0.2);
+}
+
+.crdimg {
+  border-radius: 5px 5px 0 0;
+}
+
+.crdcontainer {
+  padding: 2px 16px;
+}
+.text-shadow{
+color: black; 
+text-shadow: 6px 4px 8px #000000;
+}
+.crd-space{
+width:20%;
+margin: 30px;
+}
+.crd-clr{
+background-color: rgba(38,72,43,0.2);
+}
+.text-link{
+color: white; 
+text-shadow: 6px 4px 8px #000000;
+}
+.text-par{
+color: black; 
+text-shadow: 6px 4px 8px #FFFFFF;
+}
+
+.picturebox img {
+  border: solid 3px blue;
+  padding: 5px;
+  background-color: lightblue;
+}

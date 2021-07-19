@@ -1,0 +1,101 @@
+<!-- base file to extend-->
+{% extends 'base.html' %}
+
+<!--blocks to extend-->
+
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="btn btn-outline-dark text-white" href="{{ url_for('home') }}">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="{{ url_for('about') }}">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="{{ url_for('userlogin') }}">Log In</a>
+					</li>
+				</ul>
+			</div>
+{% endblock nav%}
+{%block body %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="/static/images/home_1.jpg" style="height:550px;" alt="First slide">
+            <div class="carousel-caption slideshow-caption">
+                        <h2 class="text-link"><b>WELCOME TO CROP ADVISOR</b></h2>
+                        <br/><br/>
+                        <p class="text-link">"We are here to give you best advices to get better yeild and profit."
+                        </p>
+                        <br/><br/>
+                    </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="/static/images/home_2.jpg" style="height:550px;" alt="Second slide">
+			<div class="carousel-caption slideshow-caption">
+                        <h2 class="text-link"><b>WELCOME TO CROP ADVISOR</b></h2>
+                        <br/><br/>
+                        <p class="text-link">"We are here to give you best advices to get better yeild and profit."
+                        </p>
+                        <br/><br/>
+                    </div>
+        </div>
+		<div class="carousel-item">
+            <img class="d-block w-100" src="/static/images/home_3.jpg" style="height:550px;" alt="Third slide">
+			<div class="carousel-caption slideshow-caption">
+                        <h2 class="text-link"><b>WELCOME TO CROP ADVISOR</b></h2>
+                        <br/><br/>
+                        <p class="text-link">"We are here to give you best advices to get better yeild and profit."
+                        </p>
+                        <br/><br/>
+                    </div>
+        </div>
+		<div class="carousel-item">
+            <img class="d-block w-100" src="/static/images/home_4.jpg" style="height:550px;" alt="Fourth slide">
+			<div class="carousel-caption slideshow-caption">
+                        <h2 class="text-link"><b>WELCOME TO CROP ADVISOR</b></h2>
+                        <br/><br/>
+                        <p class="text-link">"We are here to give you best advices to get better yeild and profit."
+                        </p>
+                        <br/><br/>
+                    </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+{% endblock body%}
+
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('home') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+			<ul class="nav float-right "><li class="nav-item">
+				<a class="btn btn-outline-dark float-right" href="{{url_for('adminlogin')}}">Admin</a>
+			</li></ul>
+    </div>
+	</br>
+</footer>
+{%endblock footer%}

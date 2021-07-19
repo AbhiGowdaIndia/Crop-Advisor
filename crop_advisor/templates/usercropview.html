@@ -1,0 +1,90 @@
+<!-- base file to extend-->
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item ">
+			<a class="nav-link text-white" href="{{ url_for('userhome') }}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('weatherinformation') }}">Weather information</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('userabout') }}">About</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('contactus') }}">Contact us</a>
+		</li>
+		<li class="dropdown nav-item ">
+			<a class="dropdown-toggle nav-link text-white" data-toggle="dropdown" href="#">Account</a>
+                            <ul class="dropdown-menu" style="background-color: #C0C0C0;">
+                                <li><a class=" nav-link text-white" href="{{url_for('userprofile')}}">profile</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userchangepassword')}}">Change password</a></li>
+								<li><a class=" nav-link text-white" href="{{url_for('userlogout')}}">Log Out</a></li>
+							</ul>
+		</li>
+		</ul>
+</div>
+{% endblock nav%}
+
+{% block body %}   
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+		<div class="banner-top3">
+			<div class="overlay">
+				<div class="container text-center">
+{% if result %} 
+</br></br></br>
+<div class="row h-100 justify-content-center text-white">
+</br></br>
+<h3 class="text-white">Crop Price Details...</h3>
+</div>
+</br>
+<div class="row h-100 justify-content-center">
+</br>
+<table class="text-white" cellspacing=10 cellpadding=4  align="center" style="float:center;">
+<tr><th><b>Crop name</b></th><th></th><th><b>Price/100kg</b></th><th></th></tr>
+{% for query in result %}
+    <tr>
+    <td>{{query.crop}}</td>
+	<td></td>
+    <td>{{ query.price }}</td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% else %}
+</br>
+</br>
+<div class="row h-100 justify-content-center">
+<h3 class="text-white">There are no crops added yet...!</h3>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+{% endif %}
+				</div>
+				</br>
+				</br>		
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('userhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+<!-- move top icon -->
+	<a href="usercropview" class="move-top text-center"></a>
+
+{%endblock footer%}

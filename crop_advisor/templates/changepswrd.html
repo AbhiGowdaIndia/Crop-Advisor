@@ -1,0 +1,100 @@
+<!-- base file to extend-->
+{% extends 'base.html' %}
+
+{% block nav %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('adminhome') }}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="{{ url_for('adminabout') }}">About</a>
+		</li>
+		<li class="nav-item">
+			<a class=" nav-link text-white" href="{{ url_for('adminlogout') }}">Log Out</a>
+		</li>
+	</ul>
+</div>
+
+{% endblock nav%}
+
+{% block body %}
+</br>
+</br></br>
+<div class="row h-100 justify-content-center text-center">
+{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" style="width:50%">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          </br> 
+          </div>
+             
+<div class="row h-100 justify-content-center">
+<h3 class="text-shadow">Change password</h3>
+</br></br>
+</br>
+</div>
+
+<div class="row h-100 justify-content-center text-center">
+<form class="form-signin" style="width:30%;" method="POST" action="{{ url_for('changepassword') }}">
+ {{ form.hidden_tag() }}
+      
+        <div class="form-group">
+                    {% if form.current_password.errors %}
+                        {{ form.current_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.current_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.current_password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {% if form.new_password.errors %}
+                        {{ form.new_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.new_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.new_password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+      
+                <div class="form-group">
+                {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+            </div>
+    </form>
+    </div>
+    </br>
+	</br>
+	</br>
+	</br>
+{% endblock %}
+{%block footer %}
+<footer class="footer" style="background-color: rgba(38,72,43,0.2);">
+</br>
+	<div class="container" >
+		<h2 class="logo2 text-center">
+				<a href="{{ url_for('adminhome') }}">
+					CROP ADVISOR
+				</a>
+			</h2>
+        <span class="text-left">© 2021 Copyright: Crop Advisor</span>
+    </div>
+	</br>
+</footer>
+{%endblock footer%}
