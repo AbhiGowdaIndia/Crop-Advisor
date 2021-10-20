@@ -5,4 +5,4 @@ By up loading the information neededby the UI the user can get the information l
  
 The models for the project is developed using Deep learning and machine learning.
 
-The the fronend is developed using Flask framework.
+The the frontend is developed using Flask framework.
