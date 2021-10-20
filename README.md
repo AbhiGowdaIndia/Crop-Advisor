@@ -1,7 +1,7 @@
 # Crop-Advisor
 
 
-By up loading the information neededby the UI the user can get the information like, the crop which give better yeild, predict the fertilizers for perticular crop and predict thediseases.
+By up loading the information neededby the UI the user can get the information like, the crop which give better yield, predict the fertilizers for particular crop and predict the diseases.
  
 The models for the project is developed using Deep learning and machine learning.
 
