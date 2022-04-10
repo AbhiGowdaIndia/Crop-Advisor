@@ -13,10 +13,7 @@ Home Page
 ![home](https://user-images.githubusercontent.com/44654961/162606567-093ddabd-e62c-49b1-9874-5095753bbc94.jpg)
 
 Admin Login
-![Admin_login](https://user-images.githubusercontent.com/44654961/162606592-c702c44f-5976-43ec-8eb0-9357a8de0d11.jpg)
-
-Admin Home
-![Admin_home](https://user-images.githubusercontent.com/44654961/162606600-cfb27508-2b5d-40ae-9eb1-2bbc8dd1f271.jpg)
+![Admin_login](https://user-images.githubusercontent.com/44654961/162606592-c702c44f-5976-43ec-8eb0-9357a8de0d11.jpg) ![Admin_home](https://user-images.githubusercontent.com/44654961/162606600-cfb27508-2b5d-40ae-9eb1-2bbc8dd1f271.jpg)
 
 User Home
 ![User_home](https://user-images.githubusercontent.com/44654961/162606637-57a56840-2a62-42a3-9349-fbeb83c76a63.jpg)
