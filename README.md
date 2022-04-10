@@ -10,7 +10,7 @@ The project is developed using Flask framework.
 Few Screenshots from the projects are here.
 
 ### Home Page
-![home](https://user-images.githubusercontent.com/44654961/162606567-093ddabd-e62c-49b1-9874-5095753bbc94.jpg)
+<img src="images/home.jpg" width="150" height="100">
 
 Admin Login
 ![Admin_login](https://user-images.githubusercontent.com/44654961/162606592-c702c44f-5976-43ec-8eb0-9357a8de0d11.jpg) 
