@@ -29,4 +29,4 @@ Few Screenshots from the projects are here.
 <img src="Images/disease_prediction.jpg" width="425" height="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/disease_prediction_result.jpg" width="425" height="300">
 
 ### Getting Weather Information
-<img src="Images/weatherinfo.jpg" width="425" height="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/[Weatherinfo_result.jpg" width="425" height="300">
+<img src="Images/weatherinfo.jpg" width="425" height="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/Weatherinfo_result.jpg" width="425" height="300">
