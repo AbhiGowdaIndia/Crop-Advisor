@@ -10,10 +10,10 @@ The project is developed using Flask framework.
 Few Screenshots from the projects are here.
 
 ### Home Page
-<img src="Images/home.jpg" width="250" height="200">    <img src="Images/Admin_login.jpg" width="250" height="200">
+<img src="Images/home.jpg" width="250" height="200">  
 
-Admin Login
-<img src="Images/Admin_login.jpg" width="250" height="200"> 
+### Admin Login   and Admin Home
+<img src="Images/Admin_login.jpg" width="250" height="200">                       <img src="Images/Admin_Home.jpg" width="250" height="200">
 
 Admin Home
 ![Admin_home](https://user-images.githubusercontent.com/44654961/162606600-cfb27508-2b5d-40ae-9eb1-2bbc8dd1f271.jpg)
