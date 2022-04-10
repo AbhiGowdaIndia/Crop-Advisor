@@ -10,7 +10,7 @@ The project is developed using Flask framework.
 Few Screenshots from the projects are here.
 
 ### Home Page
-<img src="Images/home.jpg" width="250" height="200"><img src="Images/Admin_login.jpg" width="250" height="200">
+<img src="Images/home.jpg" width="250" height="200">    <img src="Images/Admin_login.jpg" width="250" height="200">
 
 Admin Login
 <img src="Images/Admin_login.jpg" width="250" height="200"> 
