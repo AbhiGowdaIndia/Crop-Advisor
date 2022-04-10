@@ -6,3 +6,8 @@ The User Interface is very friendly just by up loading required information the 
 The models for the project is developed using Deep learning and machine learning.
 
 The project is developed using Flask framework.
+
+Few Screenshots from the projects are here.
+
+
+![home](https://user-images.githubusercontent.com/44654961/162606567-093ddabd-e62c-49b1-9874-5095753bbc94.jpg)
